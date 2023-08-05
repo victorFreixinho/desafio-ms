@@ -44,3 +44,9 @@ services:
     env_file: .env.docker-compose
     ports:
       - "2181:2181"
+
+  mongodb:
+    image: mongo:latest
+    env_file: .env.docker-compose
+    ports:
+      - 27017:27017
