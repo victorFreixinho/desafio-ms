@@ -12,7 +12,7 @@ export class UsersController {
 
   constructor(private readonly configService: ConfigService) {
     this.client = new ClientKafka(
-      getKafkaConfigs(configService.get('KAFKA_BROKER') as string),
+      getKafkaConfigs(this.configService.get('KAFKA_BROKER') as string),
     );
   }
 
