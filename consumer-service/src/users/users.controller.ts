@@ -24,7 +24,7 @@ export class UsersController {
   @MessagePattern(UsersController.CREATE_USER_TOPIC)
   create(@Body() createUserDto: CreateUserDto) {
     UsersController.logger.log(
-      `Received message: ${JSON.stringify(createUserDto)}`,
+      `Received kafka message: ${JSON.stringify(createUserDto)}`,
     );
     return createUserDto;
   }

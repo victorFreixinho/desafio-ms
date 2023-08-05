@@ -11,6 +11,7 @@ export class UsersController {
 
   @Post()
   async create(@Body() createUserDto: CreateUserDto) {
+    this.logger.log(`Received request to create user ${createUserDto.name}`);
     await this.kafkaProducerService.produce(
       UsersController.CREATE_USER_TOPIC,
       createUserDto,

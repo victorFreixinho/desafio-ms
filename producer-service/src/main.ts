@@ -27,7 +27,7 @@ async function startKafkaApp() {
   const kafkaConfigs = getKafkaConfigs(process.env.KAFKA_BROKER);
   const app = await NestFactory.createMicroservice<KafkaOptions>(AppModule, {
     transport: Transport.KAFKA,
-    ...kafkaConfigs,
+    options: { ...kafkaConfigs },
   });
 
   app.listen();
